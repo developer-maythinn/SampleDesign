@@ -24,9 +24,10 @@ export default function Nav(props) {
               <li key={i}>
                 {/* <a href={`/${item.name}`} onClick={(e) => console.log(e.target)} target="_blank"> */}
                 <a
-                  href="#"
+                  href={i === 0 ? '/' : `/${item.name}`}
+                  target="_blank"
                   className={
-                    activeLink === item.name || activeLink === "Home" || appearOpen
+                    activeLink === item.name || activeLink === "Home" || i === 0
                       ? "active"
                       : ""
                   }
@@ -54,7 +55,7 @@ export default function Nav(props) {
             margin-left: 20px;
           }
           .active {
-            color: var(--primary);
+            color: var(--primary)!important;
           }
           a {
             height: 100%;
