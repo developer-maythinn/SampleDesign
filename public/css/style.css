@@ -1,0 +1,86 @@
+html, body {
+    position: relative;
+    width: 100%;
+  height: 100%;
+  font-size: 16px;
+  /* font-family: 'Bakbak One', cursive; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.loading {
+    position: fixed;
+    z-index: 15;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    will-change: clip-path;
+    transition: opacity 1.5s var(--slow-ease);
+}
+.loading-container {
+    width: 65%;
+    max-width: 500px;
+    font-family: BebasNeue;
+    position: relative;
+    transform: translate(-10%, 10%);
+}
+.hello {
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+    background-image: url(https://venuslab.co/images/hello.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.loading-text {
+    position: absolute;
+    z-index: 1;
+    top: -50%;
+    left: 50%;
+    width: 80%;
+    height: 100%;
+    transform: translate(-50%, 0);
+    background-image: url(https://venuslab.co/images/loading.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.loading:not(.hide) .loading-text {
+    animation: Loading 2s linear infinite;
+}
+.loading-time {
+    font-size: 3em;
+    font-weight: 600;
+    position: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #EFC30F;
+    transform: translate(80%, -25%);
+    z-index: 1;
+}
+.loading.hide {
+    opacity: 0;
+    pointer-events: none;
+}
+@media (min-width: 992px) {
+    .loading-time {
+        font-size: 8em;
+    }
+}
+@keyframes Loading {
+    0%, 100% {opacity: 0;}
+    50% {opacity: .8;}
+}
+@keyframes Animate {
+    from {
+        clip-path: circle(100% at 50% 50%);
+    }
+    to {
+        clip-path: circle(0% at 50% 50%);
+    }
+}
