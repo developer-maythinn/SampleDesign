@@ -14,7 +14,7 @@ export default function Nav(props) {
   const handleClick = (targetItem) => {
     setActiveLink(targetItem);
   };
-  console.log(activeLink);
+ console.log(activeLink)
   return (
     <>
       <nav className={appearOpen}>
@@ -24,7 +24,7 @@ export default function Nav(props) {
               <li key={i}>
                 {/* <a href={`/${item.name}`} onClick={(e) => console.log(e.target)} target="_blank"> */}
                 <a
-                  href={i === 0 ? "/" : `#`}
+                  href={i === 0 ? '/' : `/${item.name}`}
                   target="_blank"
                   className={
                     activeLink === item.name || activeLink === "Home" || i === 0
@@ -55,7 +55,7 @@ export default function Nav(props) {
             margin-left: 20px;
           }
           .active {
-            color: var(--primary) !important;
+            color: var(--primary)!important;
           }
           a {
             height: 100%;
@@ -119,7 +119,7 @@ export default function Nav(props) {
               transform: translate(-50%, calc(-50% + 1px));
             }
             button::before {
-              content: "";
+              content: '';
               display: block;
               position: absolute;
               z-index: 0;
@@ -130,13 +130,13 @@ export default function Nav(props) {
               background-color: #fff;
               border-radius: 42px;
               transform: translate(-50%, -50%) scale(0);
-              transition: transform 0.4s var(--accelerate-ease);
-            }
+              transition: transform .4s var(--accelerate-ease);
+          }
             button:hover::before {
-              -webkit-transform: translate(-50%, -50%) scale(1);
-              -ms-transform: translate(-50%, -50%) scale(1);
-              transform: translate(-50%, -50%) scale(1);
-            }
+              -webkit-transform: translate(-50%,-50%) scale(1); 
+              -ms-transform: translate(-50%,-50%) scale(1);
+               transform: translate(-50%,-50%) scale(1); 
+          }
             button:hover {
               font-size: 0.85em;
               font-weight: 200;
@@ -175,9 +175,9 @@ export default function Nav(props) {
               overflow-y: auto;
             }
             li {
-              height: 40px;
-              margin-left: 0px;
-            }
+                height: 40px;
+                margin-left: 0px;
+              }
             nav {
               position: fixed;
               z-index: -1;
@@ -213,35 +213,35 @@ export default function Nav(props) {
               transition: opacity 0.4s var(--nav-ease) 0.2s;
             }
             button {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: #111;
-              text-decoration: none;
-              text-transform: uppercase;
-              font-weight: 400;
-              font-size: 0.9em;
-              padding-top: 4px;
-              background-color: var(--primary);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #111;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: .9em;
+                padding-top: 4px;
+                background-color: var(--primary);
             }
             li {
-              width: 100%;
-              height: 60px;
+                width: 100%; 
+                height: 60px;
             }
             li a {
-              width: 100%;
-              height: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              color: #fff;
-              text-decoration: none;
-              text-transform: capitalize;
-              font-weight: 400;
-              font-size: 1.6em;
-              padding: 0 10px;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                text-decoration: none;
+                text-transform: capitalize;
+                font-weight: 400;
+                font-size: 1.6em;
+                padding: 0 10px;
             }
           }
         `}
