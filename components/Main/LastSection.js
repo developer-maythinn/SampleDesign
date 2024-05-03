@@ -147,7 +147,7 @@ export default function LastSection() {
         padding: 60px 0;
         }
         section.wrapper{
-            background-image: url(https://venuslab.co/images/home-banner.jpg);
+          background:#18536b;
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
